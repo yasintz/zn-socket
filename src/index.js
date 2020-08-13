@@ -25,5 +25,3 @@ server.listen(PORT, (err) => {
 app.get('/', (req, res) => {
   res.sendFile(path.join(process.cwd(), 'src', 'index.html'));
 });
-
-app.get('*', (req, res) => res.redirect('/'));
