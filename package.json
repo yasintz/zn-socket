@@ -6,8 +6,8 @@
   "author": "Rob Brennan <rob@therobbrennan.com>",
   "main": "index.js",
   "scripts": {
-    "start": "yarn build && node src/_index.js",
-    "build": "node build.js"
+    "start": "yarn write && node src/_index.js",
+    "write": "node build.js"
   },
   "license": "ISC",
   "dependencies": {
