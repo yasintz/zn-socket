@@ -10,6 +10,16 @@ const PORT = process.env.PORT || 9122;
 var app = express()
   .use(express.json())
   .use(morgan('dev'))
+  .use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
+    );
+    next();
+  })
   .use(
     cors({
       origin: function (origin, callback) {
