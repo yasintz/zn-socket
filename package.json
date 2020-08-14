@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/_index.js",
-    "_build": "node build.js"
+    "build": "node build.js"
   },
   "license": "ISC",
   "dependencies": {
