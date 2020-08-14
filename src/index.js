@@ -1,7 +1,7 @@
 const morgan = require('morgan');
 const http = require('http');
-const path = require('path');
 const webSocket = require('./web-socket');
+const indexHtml = require('./index.html');
 
 const PORT = process.env.PORT || 9122;
 
@@ -22,6 +22,9 @@ server.listen(PORT, (err) => {
   console.log(`> Ready on server http://localhost:${PORT}`);
 });
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(process.cwd(), 'src', 'index.html'));
+app.get('/emitter', (req, res) => {
+  res.send(indexHtml(true));
+});
+app.get('/listener', (req, res) => {
+  res.send(indexHtml(false));
 });

@@ -1,3 +1,4 @@
+const indexHtml = (isEmitter) => `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,13 +23,18 @@
       const id = Math.random();
       const event = 'open-tureng';
 
+      ${isEmitter?`
       function emitt() {
         socket.emit('emit', { event, arg: { rn: Math.random() } });
       }
-
+      `:`
       socket.on(event, (arg) => {
         console.log({ arg });
       });
+      `}
     </script>
   </body>
 </html>
+`;
+
+module.exports = indexHtml;
