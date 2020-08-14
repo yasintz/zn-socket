@@ -1,5 +1,6 @@
 const morgan = require('morgan');
-var express = require('express');
+const express = require('express');
+const cors = require('cors');
 const http = require('http');
 const webSocket = require('./web-socket');
 const indexHtml = require('./index.html');
